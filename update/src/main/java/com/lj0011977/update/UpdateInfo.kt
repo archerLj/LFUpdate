@@ -7,17 +7,21 @@ import org.json.JSONObject
  * date: 2019/4/3 08
  * usage:
  */
-data class UpdateInfo(var hasUpdate: Boolean = false, // 是否有新版本
-                      var isSilent: Boolean = false, // 是否静默下载：有新版本时不提示直接下载
-                      var isForce: Boolean = false, // 是否强制安装：不安装无法使用app
-                      var isAutoInstall: Boolean = false, // 是否下载完成后自动安装
-                      var isIgnorable: Boolean = false, // 是否可忽略该版本
-                      var versionCode: Int = 0,
-                      var versionName: String = "",
-                      var updateContent: String = "",
-                      var url: String = "",
-                      var md5: String = "",
-                      var size: Long = 0) {
+class UpdateInfo {
+
+    var hasUpdate: Boolean = false // 是否有新版本
+    var isSilent: Boolean = false // 是否静默下载：有新版本时不提示直接下载
+    var isForce: Boolean = false // 是否强制安装：不安装无法使用app
+    var isAutoInstall: Boolean = false // 是否下载完成后自动安装
+    var isIgnorable: Boolean = false // 是否可忽略该版本
+    var versionCode: Int = 0
+    var versionName: String = ""
+    var updateContent: String = ""
+    var url: String = ""
+    var md5: String = ""
+    var size: Long = 0
+
+    constructor()
 
     companion object {
         fun parse(s: String): UpdateInfo {
